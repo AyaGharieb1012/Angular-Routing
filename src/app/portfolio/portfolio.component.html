@@ -1,0 +1,42 @@
+<section class="mt-5  pt-5 portfolio" >
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="title text-center">
+                    <h2>PORTFOLIO COMPONENT</h2>
+
+                </div>
+                <div class="d-flex justify-content-center align-items-center mb-3">
+                    <div class="line me-3"></div>
+                    <i class="fa-solid fa-star  me-3"></i>
+                    <div class="line me-3"></div>
+
+                </div>
+            </div>
+         </div>   
+<div class="row g-5" *ngFor="let row of images | slice:0:3; let i=index">
+     <div class="col-md-4 mb-4" *ngFor="let image of row">
+        <div class="content " (mouseenter)="toggleLayer(image.id,true)" (mouseleave)="toggleLayer(image.id,false)">
+            <img [src]="image.src" alt="" class="w-100">
+            <div class="layer" [ngClass]="{'active':image.isActive}">
+                <div class="layer-content d-flex justify-content-center align-items-center">
+                    <i class="fa-solid fa-plus fs-1 fw-bold  text-white"></i>
+                </div>
+            </div>
+            
+        </div>
+    </div> 
+
+    
+
+</div>
+    </div>
+    
+</section>
+<div class="overlay">
+<div class="centered-image  container w-50"  *ngIf="selectedImage" >
+    <img [src]="selectedImage" alt="" class="w-100">
+  </div>
+</div>
+  
+  

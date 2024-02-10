@@ -1,0 +1,10 @@
+.line{
+    background-color: white;
+    width: 80px;
+    height: 4px;
+}
+.about{
+    background-color: #1abc9c;
+    color: white;
+    height: 700px !important;
+}
